@@ -1,30 +1,30 @@
 /*
-    File:    lynx_scaner.h
+    File:    lu_scaner.h
     Created: 09 February 2019 at 13:18 Moscow time
     Author:  Гаврилов Владимир Сергеевич
     E-mails: vladimir.s.gavrilov@gmail.com
              gavrilov.vladimir.s@mail.ru
              gavvs1977@yandex.ru
 */
-#ifndef LYNX_SCANER_H
-#define LYNX_SCANER_H
-#   include "../include/lynx_lexeme.h"
+#ifndef LU_SCANER_H
+#define LU_SCANER_H
+#   include "../include/lu_lexeme.h"
 #   include "../include/abstract_scaner.h"
 #   include "../include/category.h"
-namespace lynx_scanner{
-    using Lynx_token = ascaner::Token<lynx_scanner::Lexeme_info>;
+namespace lu_scanner{
+    using lu_token = ascaner::Token<lu_scanner::Lexeme_info>;
 
-    class Scanner : public ascaner::Abstract_scaner<lynx_scanner::Lexeme_info>{
+    class Scanner : public ascaner::Abstract_scaner<lu_scanner::Lexeme_info>{
     public:
         Scanner()               = default;
         Scanner(const ascaner::Location_ptr& location, const Errors_and_tries& et) :
-            ascaner::Abstract_scaner<lynx_scanner::Lexeme_info>(location, et) {};
+            ascaner::Abstract_scaner<lu_scanner::Lexeme_info>(location, et) {};
         Scanner(const Scanner&) = default;
         virtual ~Scanner()      = default;
 
-        ascaner::Token<lynx_scanner::Lexeme_info> current_lexeme() override;
+        ascaner::Token<lu_scanner::Lexeme_info> current_lexeme() override;
 
-        std::string lexeme_to_string(const lynx_scanner::Lexeme_info& li) override;
+        std::string lexeme_to_string(const lu_scanner::Lexeme_info& li) override;
     private:
         enum class Automaton_name{
             Start,     Unknown,          Keyword, Id,

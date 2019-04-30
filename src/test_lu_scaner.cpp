@@ -1,24 +1,16 @@
-/*
-    File:    test_lynx_scaner.cpp
-    Created: 12 March 2019 at 09:13 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
-*/
 
 #include <cstdio>
-#include "../include/test_lynx_scaner.h"
-#include "../include/lynx_lexeme.h"
+#include "../include/test_lu_scaner.h"
+#include "../include/lu_lexeme.h"
 
-void test_lynx_scaner(const std::shared_ptr<lynx_scanner::Scanner>& lynxsc)
+void test_lu_scaner(const std::shared_ptr<lu_scanner::Scanner>& lusc)
 {
-    lynx_scanner::Lynx_token lti;
-    lynx_scanner::Lexem_code llc;
+    lu_scanner::Lu_token lti;
+    lu_scanner::Lexem_code llc;
     do{
-        lti    = lynxsc->current_lexeme();
+        lti    = lusc->current_lexeme();
         llc   = lti.lexeme_.code_;
-        auto s = lynxsc->token_to_string(lti);
+        auto s = lusc->token_to_string(lti);
         puts(s.c_str());
-    }while(llc != lynx_scanner::Lexem_code::Nothing);
+    }while(llc != lu_scanner::Lexem_code::Nothing);
 }

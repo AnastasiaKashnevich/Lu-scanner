@@ -1,11 +1,3 @@
-/*
-     File:    lynx-scanner.cpp
-     Created: 09 February 2019 at 12:09 Moscow time.
-     Author:  Гаврилов Владимир Сергеевич
-     E-mails: vladimir.s.gavrilov@gmail.com
-              gavrilov.vladimir.s@mail.ru
-              gavvs1977@yandex.ru
-*/
 
 #include <string>
 #include <cstdio>
@@ -43,7 +35,7 @@ int main(int argc, char* argv[])
     et.ec_                   = std::make_shared<Error_count>();
     et.ids_trie_             = std::make_shared<Char_trie>();
     et.strs_trie_            = std::make_shared<Char_trie>();
-    auto              lynxsc = std::make_shared<lu_scanner::Scanner>(loc, et);
+    auto              lusc = std::make_shared<lu_scanner::Scanner>(loc, et);
 
 // #define DEBUG
 #ifdef DEBUG

@@ -1,11 +1,3 @@
-/*
-    File:    lynx_scaner.cpp
-    Created: 10 February 2019 at 16:25 Moscow time
-    Author:  Гаврилов Владимир Сергеевич
-    E-mails: vladimir.s.gavrilov@gmail.com
-             gavrilov.vladimir.s@mail.ru
-             gavvs1977@yandex.ru
-*/
 
 #include <string>
 #include <cstdio>
@@ -1555,7 +1547,7 @@ namespace lu_scanner{
         }
     }
 
-    ascaner::Token<lynx_scanner::Lexeme_info> Scanner::current_lexeme()
+    ascaner::Token<lu_scanner::Lexeme_info> Scanner::current_lexeme()
     {
         automaton_           = Automaton_name::Start;
         token_.lexeme_.code_ = Lexem_code::Nothing;
@@ -1605,36 +1597,22 @@ namespace lu_scanner{
 
     static const std::string code_names[] = {
         "Nothing",                     "UnknownLexem",
-        "Kw_bezzn",                    "Kw_bezzn8",
-        "Kw_bezzn16",                  "Kw_bezzn32",
-        "Kw_bezzn64",                  "Kw_bezzn128",
-        "Kw_bolshoe",                  "Kw_vechno",
-        "Kw_veshch",                   "Kw_veshch32",
-        "Kw_veshch64",                 "Kw_veshch80",
-        "Kw_veshch128",                "Kw_vozvrat",
-        "Kw_vyberi",                   "Kw_vydelenie",
-        "Kw_vyjdi",                    "Kw_golovnaya",
-        "Kw_dlya",                     "Kw_esli",
-        "Kw_inache",                   "Kw_ines",
-        "Kw_istina",                   "Kw_kompl",
-        "Kw_kompl32",                  "Kw_kompl64",
-        "Kw_kompl80",                  "Kw_kompl128",
-        "Kw_konst",                    "Kw_log",
+        "Kw_big",                      "Kw_break",
+        "Kw_const",                    "Kw_clean",
+        "Kw_delete",                   "Kw_else",
+        "Kw_false",                    "Kw_for",
+        "Kw_full8",                    "Kw_full16",
+        "Kw_full32",                   "Kw_full64",
+        "Kw_ful128",                   "Kw_good",
+        "Kw_if",                       "Kw_log",
         "Kw_log8",                     "Kw_log16",
         "Kw_log32",                    "Kw_log64",
-        "Kw_lozh",                     "Kw_malenkoe",
-        "Kw_massiv",                   "Kw_modul",
-        "Kw_nichto",                   "Kw_osvobozhdenie",
-        "Kw_perem",                    "Kw_perechislenie",
-        "Kw_povtoryaj",                "Kw_poka",
-        "Kw_pokuda",                   "Kw_razbor",
-        "Kw_simv",                     "Kw_stroka",
-        "Kw_struktura",                "Kw_ssylka",
-        "Kw_tip",                      "Kw_to",
-        "Kw_funktsiya",                "Kw_chistaya",
-        "Kw_tsel",                     "Kw_tsel8",
-        "Kw_tsel16",                   "Kw_tsel32",
-        "Kw_tsel64",                   "Kw_tsel128",
+        "Kw_main",                     "Kw_perem",
+        "Kw_small",                    "Kw_sign",
+        "Kw_string",                   "Kw_time",
+        "Kw_type",                     "Kw_then",
+        "Kw_true",                     "Kw_usl",
+        "Kw_while",                    
         "Id",                          "Integer",
         "Float32",                     "Float64",
         "Float80",                     "Float128",
@@ -1695,7 +1673,7 @@ namespace lu_scanner{
         "Maybe_component_or",          "Comma"
     };
 
-    std::string Scanner::lexeme_to_string(const lynx_scanner::Lexeme_info& li)
+    std::string Scanner::lexeme_to_string(const lu_scanner::Lexeme_info& li)
     {
         std::string result;
         auto        lc     = li.code_;
