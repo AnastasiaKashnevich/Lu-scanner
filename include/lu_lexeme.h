@@ -1,4 +1,3 @@
-
 #ifndef LU_LEXEME_H
 #define LU_LEXEME_H
 #include <cstddef>
@@ -22,14 +21,13 @@ namespace lu_scanner{
         Kw_type,                     Kw_then,
         Kw_true,                     Kw_usl,
         Kw_while,                    
-		Id,                         
-		Integer,                     Float32,  
-		Float64,                     Float80, 
-		Float128,                    Complex32, 
-		Complex64,                   Complex80,         
-		Complex128,                  String,          
-		Char,                        Sq_br_opened,   
-		Sq_br_closed,
+        Id,                          Integer,
+        Float32,                     Float64,
+        Float80,                     Float128,
+        Complex32,                   Complex64,
+        Complex80,                   Complex128,
+        String,                      Char,
+        Sq_br_opened,                Sq_br_closed,
         Round_br_opened,             Round_br_closed,
         Set_field,                   Component_is,
         Logical_not,                 Bitwise_not,
