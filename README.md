@@ -1,1 +1,1 @@
-Testing of a scanner of the programming language Рысь.
+Testing of a scanner of the programming language Lu.
